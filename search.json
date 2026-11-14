@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Why LeBron James is the Greatest of All Time",
+    "section": "",
+    "text": "1. Every NBA Player in History (5,159 Observations): Scoring vs. Playmaking\nLeBron James is the only player in NBA history with 40,000+ Points, 12,000+ Rebounds, and 12,000+ Assists. Every single dot below represents one of the 5,159 players who have ever stepped onto an NBA court — hover over any dot (or drag to zoom into crowded clusters) to inspect that player’s career resume!\n\n\n\n\n\n\n\n\n\n2. Why LeBron Is Undeniably #1: All-Time Rank Across Every Skill\nMost legends dominate one or two categories — pure scorers score, centers rebound, and point guards pass. Out of 5,159 players in NBA history, LeBron sits in the Top 6 all-time across scoring, longevity, playmaking, perimeter shooting, and perimeter defense, while also ranking Top 25 all-time in rebounding."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This project analyzes real career regular-season totals for all 5,159 players in NBA history (sourced from the official NBA Stats League Leaders database) to examine how LeBron James compares to every player who has ever stepped on an NBA court across scoring, playmaking, rebounding, efficiency, and longevity.\nBuilt with R, the tidyverse, Plotly, and Quarto as part of Kane’s Free Data Science Course.\n\nGitHub Repository: freshraw1234-star/Lebron"
+  },
+  {
+    "objectID": "analysis.html",
+    "href": "analysis.html",
+    "title": "Detailed 5,159-Player Breakdown",
+    "section": "",
+    "text": "Longevity vs. All-Around Impact Across All 5,159 Players\nHere we plot Games Played on the x-axis against Total All-Around Production (\\(\\text{Points} + 2\\times\\text{Assists} + 1.5\\times\\text{Rebounds} + 3\\times\\text{Steals} + 3\\times\\text{Blocks}\\)) on the y-axis for every player in NBA history, colored by True Shooting Efficiency (TS%)."
+  }
+]
