@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>About – LeBron James: The NBA GOAT</title>
+<title>About – LeBron James: The Statistical Case for the GOAT</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -45,7 +45,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-a4963fa6a6f52ac59a3dae6ac7b188c1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-51d21c295a0880f857f7dc11ec0e74e3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -73,11 +73,13 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<style>html{ scroll-behavior: smooth; }</style>
 
 
+<link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -85,7 +87,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">LeBron James: The NBA GOAT</span>
+    <span class="navbar-title">LeBron James: The Statistical Case for the GOAT</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -99,9 +101,23 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./analysis.html"> 
-<span class="menu-text">Analysis</span></a>
+    <a class="nav-link" href="./scoring.html"> 
+<span class="menu-text">Scoring &amp; Playmaking</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./longevity.html"> 
+<span class="menu-text">Longevity &amp; Seasons</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./playoffs.html"> 
+<span class="menu-text">Playoffs &amp; Clutch</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./explorer.html"> 
+<span class="menu-text">GOAT Explorer</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
     <a class="nav-link active" href="./about.html" aria-current="page"> 
 <span class="menu-text">About</span></a>
@@ -117,9 +133,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -142,13 +156,24 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This project analyzes real career regular-season totals for <strong>all 5,159 players in NBA history</strong> (sourced from the official <a href="https://www.nba.com/stats/leaders">NBA Stats League Leaders database</a>) to examine how LeBron James compares to every player who has ever stepped on an NBA court across scoring, playmaking, rebounding, efficiency, and longevity.</p>
-<p>Built with <strong>R</strong>, the <strong>tidyverse</strong>, <strong>Plotly</strong>, and <strong>Quarto</strong> as part of <em>Kane’s Free Data Science Course</em>.</p>
+<section id="about-the-author" class="level2">
+<h2 class="anchored" data-anchor-id="about-the-author">About the Author</h2>
+<p>Hi! My name is <strong>Ricardo Corvil</strong>, and I am a student at <a href="https://www.ncf.edu/">New College of Florida</a> studying data science with <strong>R</strong>, the <strong>tidyverse</strong>, and <strong>Quarto</strong>. I built this interactive website to move the NBA “Greatest of All Time” debate past barbershop hot takes by letting visitors explore every player’s actual career production across regular-season history, season-by-season trajectories, and the NBA Playoffs.</p>
 <ul>
-<li><strong>GitHub Repository:</strong> <a href="https://github.com/freshraw1234-star/Lebron">freshraw1234-star/Lebron</a></li>
+<li><strong>Name:</strong> Ricardo Corvil</li>
+<li><strong>Email:</strong> <a href="mailto:r.corvil28@ncf.edu">r.corvil28@ncf.edu</a></li>
+<li><strong>GitHub Account:</strong> <a href="https://github.com/freshraw1234-star">freshraw1234-star</a></li>
+<li><strong>Final Project Repository:</strong> <a href="https://github.com/freshraw1234-star/Lebron" class="uri">https://github.com/freshraw1234-star/Lebron</a></li>
+<li><strong>Institution:</strong> <a href="https://www.ncf.edu/">New College of Florida</a></li>
 </ul>
+<hr>
+</section>
+<section id="about-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="about-the-data">About the Data</h2>
+<p>All statistics presented on this website come directly from the official <a href="https://www.nba.com/stats/leaders">NBA Stats All-Time Leaders Database</a> and <a href="https://www.nba.com/stats/players">NBA Stats Player Career Profiles</a>, accessed via the NBA’s public statistics endpoints and stored locally as clean CSV files for full reproducibility. The dataset covers career regular-season totals and efficiency metrics (including True Shooting Percentage and Effective Field Goal Percentage) for all 5,160 players who have ever appeared in an NBA game, career postseason totals for every NBA playoff participant in league history, and year-by-year season logs comparing LeBron James against fellow all-time greats Michael Jordan, Kareem Abdul-Jabbar, Kobe Bryant, Stephen Curry, Kevin Durant, and Tim Duncan.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -224,7 +249,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/freshraw1234-star\.github\.io\/Lebron\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -552,8 +577,22 @@ ul.task-list li input[type="checkbox"] {
   });
   </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Ricardo Corvil • New College of Florida</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Data: Official NBA Stats Database</p>
+</div>
+  </div>
+</footer>
 
 
 
 
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
